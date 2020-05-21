@@ -27,6 +27,20 @@ class UiElement{
     }
 
     /**
+     * @return The width of the element
+     */
+    getWidth() {
+        return this.width;
+    }
+
+    /**
+     * @return The height of the element
+     */
+    getHeight() {
+        return this.height;
+    }
+
+    /**
      * Checks if mouse is inside the slider
      * if so highlights the slider
      */

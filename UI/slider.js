@@ -54,9 +54,28 @@ class Slider extends UiElement{
         text(this.text, this.x + this.width + 10, this.y + this.height*0.75);
 
         // Draw the value
-        textAlign(CENTER);
+        if(this.showVal){
+            textAlign(CENTER);
+            textSize(this.height);
+            text(this.value.toFixed(this.decimals).toString(), this.x + this.width*this.percent(), this.y + this.height*2);
+        }    
+    }
+
+    /**
+     * Overrides the way width is calculated
+     * @return The width considering the text
+     */
+    getWidth() {
         textSize(this.height);
-        text(this.value.toFixed(this.decimals).toString(), this.x + this.width*this.percent(), this.y + this.height*2);
+        return this.width + textWidth(this.text) + 10;
+    }
+
+    /**
+     * Overrides the way height is calculated
+     * @return The height considering the text
+     */
+    getHeight() {
+        return this.showVal ? this.height*2 : this.height;
     }
 
     /**

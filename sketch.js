@@ -1,6 +1,4 @@
-let sld;
-let btn;
-let tggl;
+let 
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
