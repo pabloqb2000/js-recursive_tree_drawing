@@ -12,7 +12,7 @@ class UiElement{
      * @param draggable True if the element should be updated on mouseDragged
      * @param clickable True if the element should be updated on mouseClicked
      */
-    constructor(x, y, width, height, draggable, clickable){
+    constructor(x=0, y=0, width=0, height=0, draggable=false, clickable=false){
         this.x = x;
         this.y = y;
         this.width = width;
@@ -31,6 +31,13 @@ class UiElement{
      */
     getWidth() {
         return this.width;
+    }
+
+    /**
+     * Draws nothing to create an empty element
+     */
+    draw() {
+
     }
 
     /**
