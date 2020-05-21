@@ -23,7 +23,9 @@ function setup() {
 
 	seedSld = new Slider(start=1, end=100, value=19, 0, 0, 100, 10, 1, "Random seed");
 	let tmp = new UiElement();
+
 	maxLevelSld = new Slider(start=1, end=10, value=5, 0, 0, 100, 10, 1, "Max depth level");
+	tmp = new UiElement();
 
 	UI.tableWidth = 2;
 	UI.tableHeight = 100;
