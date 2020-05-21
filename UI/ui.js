@@ -27,11 +27,13 @@ class UI{
         let colWidth = this.getColWidth();
         let rowHeight = this.getRowHeight();
         for(let e of this.elements){
-            let col = this.distributed % this.tableWidth;
-            let row = floor(this.distributed / this.tableWidth);
-            e.x = colWidth*col + this.widthMargin;
-            e.y = rowHeight*row + this.heightMargin;
-            this.distributed += 1;
+            if(e.visible) {
+                let col = this.distributed % this.tableWidth;
+                let row = floor(this.distributed / this.tableWidth);
+                e.x = colWidth*col + this.widthMargin;
+                e.y = rowHeight*row + this.heightMargin;
+                this.distributed += 1;
+            }
         }    
     }
 
