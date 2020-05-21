@@ -1,20 +1,22 @@
 # js-ui_on_canvas_example
-Here I include an example on how to use the super simple UI I built using <a href="https://p5js.org/">p5.js</a>. I also use this as default proyect.
-## Contents of the UI
-  - Slider
-  - Button
-  - ToggleButton
-## Description of the elements
-#### All elements
-All elements are highlightable and hideable
-#### Slider
-Normal slider for choosing a value between to given numbers
-It can show a label, show the actual value and have a discrete step size
-#### Button
-Performs a given action when clicked
-#### ToggleButton
-Button wich can be activated / deactivated
-Performs an action when clicked as well
+This is a small proyect on recursively drawing trees using <a href="https://p5js.org/">p5.js</a>.
+## Parameters
+  - Angle: mean angle wich the branches are rotated
+  - Angle randomness: randomness to apply to the angle
+  - Initial length: length of the main branch
+  - Length randomness: randomness to apply to the length
+  - Thickness: thickness of the main branch
+  - Thickness randomness: randomness to apply to the thickness
+  - Length decay: mean decay applied to the length in each depth
+  - Thickness decay: mean decay applied to the thickness in each depth
+  - Random seed
+  - Max depth level: maximum number of branches
+  - Wind speed: speed of the wind
+  - Wind strenth: strength of the wind
+  - Color1: first color of the tree
+  - Color2: second color of the tree
+  - Lerp: whether interpolate between the 2 colors, the interpolation is not actually linear but cuadratic
+  - Wind: whether to apply wind
 ## Screenshot
 <img src="imgs/screenshot01.png"></img>
 ## References
