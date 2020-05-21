@@ -1,0 +1,88 @@
+/**
+ * Slider to choose a value between start and end
+ * in step intervals
+ * If step is set to null then the slider is continous
+ */
+class Slider extends UiElement{
+
+    /**
+     * Constructor of the slider
+     * 
+     * @param start Minimum value of the slider
+     * @param end Maximum value of the slider
+     * @param value Default value of the slider
+     * @param x X position of the slider
+     * @param y Y position of the slider
+     * @param width Width of the slider
+     * @param height Height of the slider
+     * @param step Size of the discrete steps of the slider if is set to null slider is continuous
+     * @param text Text to show after the slider
+     * @param showVal Whether to show the value under the bar
+     * @param decimals Decimals to show under the bar
+     */
+    constructor(start=0, end=1, value=0.5, x=20, y=20, width=100, height=10, step=null, text="",
+                showVal=true, decimals=1){
+        super(x,y,width,height, true, true);
+
+        this.start = start;
+        this.end = end;
+        this.value = value;
+        
+        this.step = step;
+        this.text = text; 
+        this.showVal = showVal;
+        this.decimals = decimals;
+    }
+
+    /**
+     * Draws the slider
+     */
+    draw() {
+        // Draw the horizontal line
+        strokeWeight(2);
+        stroke(128);
+        line(this.x, this.y+this.height/2-1, this.x + this.width, this.y+this.height/2-1);
+
+        // Draw the middle rectangle
+        noStroke();
+        fill(this.highlighted ? 200 : 230);
+        rect(this.x + this.width*this.percent() - this.width/40, this.y, this.width/20, this.height, this.width/120);
+        
+        // Draw the text
+        textAlign(LEFT);
+        textSize(this.height);
+        text(this.text, this.x + this.width + 10, this.y + this.height*0.75);
+
+        // Draw the value
+        textAlign(CENTER);
+        textSize(this.height);
+        text(this.value.toFixed(this.decimals).toString(), this.x + this.width*this.percent(), this.y + this.height*2);
+    }
+
+    /**
+     * Action performed when the slider is clicked
+     */
+    clicked() {
+        this.dragged();
+    }
+
+    /**
+     * @return the percentage representing where is the value along the range
+     */
+    percent() {
+        return (this.value - this.start) / (this.end - this.start);
+    }
+
+    /**
+     * Checks if mouse is moving the slider
+     * if so updates the slider
+     */
+    dragged(){
+        if(this.mouseIsOver()) {
+            this.value = (mouseX - this.x)/this.width * (this.end - this.start) + this.start;
+            if(this.step != null) {
+                this.value = round(this.value / this.step)*this.step;
+            }
+        }
+    }
+}
