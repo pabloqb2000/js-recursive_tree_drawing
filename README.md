@@ -17,6 +17,11 @@ This is a small proyect on recursively drawing trees using <a href="https://p5js
   - Color2: second color of the tree
   - Lerp: whether interpolate between the 2 colors, the interpolation is not actually linear but cuadratic
   - Wind: whether to apply wind
+## Characteristics
+  - Wind
+  The wind is a perin noise added to the angle of each branch wich is proportional to the thicness of the branch.
+  - Color interpolation
+  The color interpolation is a cuadratic interpolation between the two colors done in HSL color space.
 ## Screenshot
 <img src="imgs/screenshot01.png"></img>
 ## References
