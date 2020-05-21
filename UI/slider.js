@@ -19,9 +19,10 @@ class Slider extends UiElement{
      * @param text Text to show after the slider
      * @param showVal Whether to show the value under the bar
      * @param decimals Decimals to show under the bar
+     * @param action Action to perform when value is changed
      */
     constructor(start=0, end=1, value=0.5, x=20, y=20, width=100, height=10, step=null, text="",
-                showVal=true, decimals=1){
+                showVal=true, decimals=1, action=null){
         super(x,y,width,height, true, true);
 
         this.start = start;
@@ -32,6 +33,7 @@ class Slider extends UiElement{
         this.text = text; 
         this.showVal = showVal;
         this.decimals = decimals;
+        this.action = action;
     }
 
     /**
@@ -98,10 +100,13 @@ class Slider extends UiElement{
      */
     dragged(){
         if(this.mouseIsOver()) {
+            let oldValue = this.value;
             this.value = (mouseX - this.x)/this.width * (this.end - this.start) + this.start;
             if(this.step != null) {
                 this.value = round(this.value / this.step)*this.step;
             }
+            if(this.value != oldValue && this.action != null)
+                this.action();
         }
     }
 }

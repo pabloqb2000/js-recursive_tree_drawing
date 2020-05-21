@@ -1,11 +1,16 @@
-let 
+let sld;
+let btn;
+let tggl;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(32);
-	sld = new Slider(start=0, end=255, value=32, 20, 20, 100, 10, null, "Background");
-	btn = new Button(x=20, y=50, width=100, height=20, "Reset", resetValue);
-	tggl = new ToggleButton(20,80,100,20,"Discrete", discretice);
+	sld = new Slider(start=0, end=255, value=32, 0, 0, 100, 10, null, "Background");
+	btn = new Button(x=0, y=0, width=100, height=20, "Reset", resetValue);
+	tggl = new ToggleButton(0,0,100,20,"Discrete", discretice);
+	UI.tableWidth = 1;
+	UI.tableHeight = 3;
+	UI.distrubute();
 }
 
 function draw() {
