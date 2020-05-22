@@ -1,4 +1,4 @@
-# js-ui_on_canvas_example
+# js-recursive_tree_drawing
 This is a small proyect on recursively drawing trees using <a href="https://p5js.org/">p5.js</a>.
 ## URL
 This proyect is hosted by github pages at <a href="https://pabloqb2000.github.io/js-recursive_tree_drawing/">this url</a>.
