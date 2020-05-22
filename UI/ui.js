@@ -74,7 +74,8 @@ class UI{
      */
     static draw() {
         for (let e of this.elements){
-            e.draw();
+            if(e.visible)
+                e.draw();
         }
     }
 
