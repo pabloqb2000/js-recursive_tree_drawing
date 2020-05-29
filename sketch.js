@@ -32,9 +32,8 @@ function setup() {
 	windSpeedSld = new Slider(start=0, end=5, value=0.8, 0, 0, width/12, height/60, null, "Wind speed");
 	windStrengthSld = new Slider(start=0, end=4, value=1, 0, 0, width/12, height/60, null, "Wind strength");
 
-	let color = [1,1,1];
-	color1 = new ColorPicker(0,0,width/12, height/60, 20, 1, color);
-	color2 = new ColorPicker(0,0,width/12, height/60, 20, 1, color);
+	color1 = new ColorPicker(0,0,width/12, height/30, "#743E01");
+	color2 = new ColorPicker(0,0,width/12, height/30, "#B0F3AF");
 
 	lerpBtn = new ToggleButton(0,0,width/12, height/30, "LERP");
 	windBtn = new ToggleButton(0,0,width/12, height/30, "Wind");
