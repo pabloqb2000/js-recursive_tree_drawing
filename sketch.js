@@ -119,17 +119,3 @@ function drawBranch(length, thickness, depth) {
 			thickness*thicknessDecaySld.value  + random(-thicknessRndSld.value, thicknessRndSld.value)*thickness, depth + 1);
 	}
 }
-
-function mouseDragged() {
-	UI.mouseDragged();
-}
-
-function mousePressed() {
-	UI.mouseClicked();
-}
-
-// function keyPressed() {
-//   if(keyCode === 83){
-//
-//   }
-// }
