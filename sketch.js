@@ -10,6 +10,7 @@ let frame = 0;
 
 
 function setup() {
+	textFont("Sarpanch");
 	createCanvas(windowWidth, windowHeight);
 	background(32);
 
